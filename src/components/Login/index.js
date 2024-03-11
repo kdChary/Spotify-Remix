@@ -8,6 +8,7 @@ import {Redirect} from 'react-router-dom'
   success: 'SUCCESS',
   failure: 'FAILURE',
 } */
+import './index.css'
 
 class Login extends Component {
   //  TODO: add Routing
@@ -55,10 +56,73 @@ class Login extends Component {
     this.setState({password: event.target.value})
   }
 
+  renderErrorMsg = () => {
+    const {errorMsg, showErrMsg} = this.state
+
+    if (showErrMsg) {
+      return <p className="error-msg">*{errorMsg}</p>
+    }
+
+    return null
+  }
+
   render() {
     const {username, password, errorMsg, showErrMsg} = this.state
+    const token = Cookies.get('jwt_token')
 
-    return <div>Test</div>
+    // TODO: add redirection
+    if (token !== undefined) {
+      console.log(token)
+    }
+
+    return (
+      <div className="main-container">
+        <div className="login-form-container">
+          <div className="app-logo-card">
+            <img
+              src="https://res.cloudinary.com/dgga8cymk/image/upload/v1710084712/music-waves_yc2qcu.png"
+              alt="logo"
+              className="app-logo"
+            />
+            <h2 className="title">Spotify Remix</h2>
+          </div>
+          <form onSubmit={this.onSubmitCredentials} className="login-form">
+            <div className="input-label-card">
+              <label htmlFor="username" className="label">
+                Username
+              </label>
+              <input
+                type="text"
+                name="username"
+                id="username"
+                value={username}
+                onChange={this.onChangeUserName}
+                className="input"
+              />
+            </div>
+
+            <div className="input-label-card">
+              <label htmlFor="password" className="label">
+                Password
+              </label>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                value={password}
+                onChange={this.onChangePassword}
+                className="input"
+              />
+            </div>
+
+            <button type="submit" className="login-btn">
+              Login
+            </button>
+            {showErrMsg && <p className="error-msg">*{errorMsg}</p>}
+          </form>
+        </div>
+      </div>
+    )
   }
 }
 
