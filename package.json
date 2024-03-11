@@ -13,15 +13,16 @@
     "@wojtekmaj/enzyme-adapter-react-17": "0.6.5",
     "chalk": "4.1.0",
     "enzyme": "3.11.0",
+    "history": "5.0.1",
     "js-cookie": "3.0.0",
     "msw": "0.35.0",
-    "history": "5.0.1",
     "react": "17.0.1",
     "react-audio-player": "0.17.0",
     "react-dom": "17.0.1",
     "react-icons": "4.3.1",
     "react-router-dom": "5.2.0",
-    "start": "5.1.0"
+    "start": "5.1.0",
+    "styled-components": "6.1.8"
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "7.21.11",
