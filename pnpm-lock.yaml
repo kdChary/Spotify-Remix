@@ -22,6 +22,7 @@ specifiers:
   react-audio-player: 0.17.0
   react-dom: 17.0.1
   react-icons: 4.3.1
+  react-loader-spinner: 4.0.0
   react-router-dom: 5.2.0
   react-scripts: 4.0.3
   start: 5.1.0
@@ -41,6 +42,7 @@ dependencies:
   react-audio-player: 0.17.0_react-dom@17.0.1+react@17.0.1
   react-dom: 17.0.1_react@17.0.1
   react-icons: 4.3.1_react@17.0.1
+  react-loader-spinner: 4.0.0_react-dom@17.0.1+react@17.0.1
   react-router-dom: 5.2.0_react@17.0.1
   start: 5.1.0
   styled-components: 6.1.8_react-dom@17.0.1+react@17.0.1
@@ -11832,6 +11834,17 @@ packages:
     resolution: {integrity: sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==}
     dev: false
 
+  /react-loader-spinner/4.0.0_react-dom@17.0.1+react@17.0.1:
+    resolution: {integrity: sha512-RU2vpEej6G4ECei0h3q6bgLU10of9Lw5O+4AwF/mtkrX5oY20Sh/AxoPJ7etbrs/7Q3u4jN5qwCwGLRKCHpk6g==}
+    peerDependencies:
+      react: '*'
+      react-dom: '*'
+    dependencies:
+      prop-types: 15.8.1
+      react: 17.0.1
+      react-dom: 17.0.1_react@17.0.1
+    dev: false
+
   /react-refresh/0.8.3:
     resolution: {integrity: sha512-X8jZHc7nCMjaCqoU+V2I0cOhNW+QMBwSUkeXnTi8IPe6zaRWfn60ZzvFDZqWPfmSJfjub7dDW1SP0jaHWLu/hg==}
     engines: {node: '>=0.10.0'}
@@ -11967,7 +11980,7 @@ packages:
     dependencies:
       object-assign: 4.1.1
       react: 17.0.1
-      react-is: 17.0.2
+      react-is: 18.2.0
     dev: false
 
   /react-test-renderer/17.0.2_react@17.0.1:
