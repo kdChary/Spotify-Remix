@@ -1,0 +1,20 @@
+.editors-pick-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'Roboto';
+  background-color: #181818;
+}
+
+.editors-pick-title {
+  font-size: 27px;
+  color: #ffffff;
+}
+
+.editors-pick-list {
+  padding-left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
