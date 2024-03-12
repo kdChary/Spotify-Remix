@@ -4,7 +4,6 @@ import {Redirect} from 'react-router-dom'
 import moment from 'moment'
 
 import Cookies from 'js-cookie'
-import Loader from 'react-loader-spinner'
 
 //  TODO: try to make separate file for api Fetching..;)
 
