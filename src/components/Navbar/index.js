@@ -1,11 +1,18 @@
-import {Link, withRouter} from 'react-router-dom'
-import {TiArrowLeft} from 'react-icons/ti'
+import {withRouter} from 'react-router-dom'
+import Cookies from 'js-cookie'
+
 import {HiMenu} from 'react-icons/hi'
 import {AiOutlineLogout} from 'react-icons/ai'
 
 import './index.css'
 
-const Navbar = () => {
+const Navbar = props => {
+  const onClickLogout = () => {
+    const {history} = props
+    history.replace('/login')
+
+    Cookies.remove('jwt_token')
+  }
   const mobileView = () => (
     <nav className="mobile-navbar">
       <img
@@ -24,7 +31,7 @@ const Navbar = () => {
         alt="website logo"
         className="nav-logo"
       />
-      <AiOutlineLogout className="nav-icon" />
+      <AiOutlineLogout className="nav-icon" onClick={onClickLogout} />
     </nav>
   )
 

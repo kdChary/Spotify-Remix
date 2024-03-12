@@ -21,21 +21,43 @@
 .nav-icon {
   font-size: 23px;
   color: #ffffff;
+  cursor: pointer;
+}
+@media (min-width: 768px) {
+  .nav-icon {
+    font-size: 29px;
+  }
 }
 
 .large-devices-navbar {
-  width: 13vh;
+  width: 10vh;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   background-color: #040306;
-  padding-top: 9px;
-  padding-bottom: 9px;
+  padding-top: 17px;
+  padding-bottom: 17px;
 }
 @media (max-width: 765px) {
   .large-devices-navbar {
     display: none;
   }
+}
+
+.back-option-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: transparent;
+  position: relative;
+  top: 0;
+}
+
+.back-text {
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 13px;
+  cursor: pointer;
 }
