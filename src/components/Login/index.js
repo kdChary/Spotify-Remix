@@ -78,7 +78,7 @@ class Login extends Component {
           <div className="app-logo-card">
             <img
               src="https://res.cloudinary.com/dgga8cymk/image/upload/v1710084712/music-waves_yc2qcu.png"
-              alt="logo"
+              alt="login website logo"
               className="app-logo"
             />
             <h2 className="title">Spotify Remix</h2>

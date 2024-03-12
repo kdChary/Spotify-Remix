@@ -4,7 +4,6 @@
 .notfound-bg {
   background-color: #181818;
   background-size: cover;
-  padding-top: 96px;
   height: 100vh;
 }
 
@@ -16,6 +15,7 @@
   align-items: center;
   width: 80%;
   margin: auto;
+  margin-top: 96px;
 }
 
 .notfound-img {
