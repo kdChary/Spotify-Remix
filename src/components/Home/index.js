@@ -22,10 +22,10 @@ class Home extends Component {
     apiFetchStatus: apiStatusConst.initial,
   }
 
-  componentDidMount() {
-    this.getGenresAndMoods()
-    this.getNewReleases()
-  }
+  //   componentDidMount() {
+  //     this.getGenresAndMoods()
+  //     this.getNewReleases()
+  //   }
 
   getGenresAndMoods = async () => {
     this.setState({apiFetchStatus: apiStatusConst.inProgress})

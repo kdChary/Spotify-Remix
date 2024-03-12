@@ -69,7 +69,7 @@ class EditorsPickList extends Component {
         <h3 className="editors-pick-title">Editor's picks</h3>
         <ul className="editors-pick-list">
           {editorsPickList.map(eachItem => (
-            <EditorsPickItem key={eachItem.key} itemDetails={eachItem} />
+            <EditorsPickItem key={eachItem.id} itemDetails={eachItem} />
           ))}
         </ul>
       </div>
