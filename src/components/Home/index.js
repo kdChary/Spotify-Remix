@@ -5,8 +5,8 @@ import moment from 'moment'
 import Cookies from 'js-cookie'
 
 import LoadingView from '../LoadingView'
-import EditorsPickItem from '../EditorsPickItem'
-import FailureView from '../FailureView'
+// import FailureView from '../FailureView'
+import EditorsPickList from '../EditorsPickList'
 //  TODO: try to make separate file for api Fetching..;)
 
 const apiStatusConst = {
@@ -17,66 +17,14 @@ const apiStatusConst = {
 }
 class Home extends Component {
   state = {
-    editorsPickList: {},
     genresAndMoodsList: {},
     newReleasesList: {},
     apiFetchStatus: apiStatusConst.initial,
   }
 
   componentDidMount() {
-    this.getEditorsPicks()
     this.getGenresAndMoods()
     this.getNewReleases()
-  }
-
-  renderEditorPicks = () => {
-    const {editorsPickList, apiFetchStatus} = this.state
-
-    return (
-      <div className="editors-pick-container">
-        <ul className="editors-pick-list">
-          {editorsPickList.map(eachItem => (
-            <EditorsPickItem key={eachItem.key} itemDetails={eachItem} />
-          ))}
-        </ul>
-      </div>
-    )
-  }
-
-  modifyData = data => ({
-    name: data.name,
-    id: data.id,
-    imageUrl: data.images[0].url,
-  })
-
-  getEditorsPicks = async () => {
-    this.setState({apiFetchStatus: apiStatusConst.inProgress})
-    const timestamp = moment(new Date()).format('YYYY-MM-DDTHH:00:00')
-
-    const url = `https://apis2.ccbp.in/spotify-clone/featured-playlists?country=IN&timestamp=${timestamp}`
-    const jwtToken = Cookies.get('jwt_token')
-    const options = {
-      method: 'GET',
-      headers: {
-        Authorization: `Bearer ${jwtToken}`,
-      },
-    }
-
-    const response = await fetch(url, options)
-    const data = await response.json()
-    if (response.ok) {
-      const modifyEditorsPick = data.playlists.items.map(eachItem =>
-        this.modifyData(eachItem),
-      )
-
-      this.setState({
-        apiFetchStatus: apiStatusConst.success,
-        editorsPickList: modifyEditorsPick,
-      })
-    } else {
-      this.setState({apiFetchStatus: apiStatusConst.failure})
-      console.log(data.error_msg)
-    }
   }
 
   getGenresAndMoods = async () => {
@@ -152,7 +100,7 @@ class Home extends Component {
     return (
       <div>
         Hello Testing
-        <FailureView />
+        <EditorsPickList />
       </div>
     )
   }
