@@ -5,7 +5,7 @@ import './index.css'
 import Navbar from '../Navbar'
 import NavigateBack from '../Navbar/NavigateBack'
 
-//  TODO: add navBar
+//  TODO: add comments
 const NotFound = () => {
   const token = Cookies.get('jwt_token')
   if (token === undefined) {
