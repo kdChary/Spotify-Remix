@@ -3,8 +3,10 @@ import {Component} from 'react'
 import {Redirect} from 'react-router-dom'
 import moment from 'moment'
 import Cookies from 'js-cookie'
+import {FaExclamationTriangle} from 'react-icons/fa'
 
 import LoadingView from '../LoadingView'
+import EditorsPickItem from '../EditorsPickItem'
 //  TODO: try to make separate file for api Fetching..;)
 
 const apiStatusConst = {
@@ -25,6 +27,32 @@ class Home extends Component {
     this.getEditorsPicks()
     this.getGenresAndMoods()
     this.getNewReleases()
+  }
+
+  renderFailureView = () => (
+    <div className="failure-view-card">
+      <FaExclamationTriangle className="home-failure-img" />
+      <p className="home-failure-text">
+        Something went wrong. Please try again
+      </p>
+      <button type="button" className="try-again-btn">
+        Try Again
+      </button>
+    </div>
+  )
+
+  renderEditorPicks = () => {
+    const {editorsPickList, apiFetchStatus} = this.state
+
+    return (
+      <div className="editors-pick-container">
+        <ul className="editors-pick-list">
+          {editorsPickList.map(eachItem => (
+            <EditorsPickItem key={eachItem.key} itemDetails={eachItem} />
+          ))}
+        </ul>
+      </div>
+    )
   }
 
   modifyData = data => ({
