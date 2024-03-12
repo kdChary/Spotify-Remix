@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+}
+.notfound-bg {
+  background-color: #181818;
+  background-size: cover;
+  padding-top: 96px;
+  height: 100vh;
+}
+
+.notfound-container {
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+  margin: auto;
+}
+
+.notfound-img {
+  width: 90%;
+}
+
+.notfound-msg {
+  color: #ffffff;
+  font-weight: 700;
+}

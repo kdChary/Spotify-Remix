@@ -13,7 +13,11 @@ const NotFound = () => {
   return (
     <div className="notfound-bg">
       <div className="notfound-container">
-        <img src="" alt="page not found" className="notfound-img" />
+        <img
+          src="https://res.cloudinary.com/dgga8cymk/image/upload/v1710212881/Spotify/Not-found/404not-found_es9rui.png"
+          alt="page not found"
+          className="notfound-img"
+        />
         <h1 className="notfound-msg">Page Not Found</h1>
       </div>
     </div>
