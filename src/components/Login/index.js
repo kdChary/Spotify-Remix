@@ -10,8 +10,9 @@ import {Redirect} from 'react-router-dom'
 } */
 import './index.css'
 
+//  TODO: add Comments.
+
 class Login extends Component {
-  //  TODO: add Routing
   state = {
     username: '',
     password: '',
@@ -20,10 +21,14 @@ class Login extends Component {
   }
 
   userAuthenticationSuccessful = jwtToken => {
+    const {history} = this.props
+
     Cookies.set('jwt_token', jwtToken, {
       expires: 1,
       path: '/',
     })
+
+    history.replace('/')
   }
 
   onSubmitCredentials = async event => {
