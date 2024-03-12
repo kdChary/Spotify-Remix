@@ -15,6 +15,8 @@ specifiers:
   husky: 4.3.8
   js-cookie: 3.0.0
   lint-staged: 10.5.4
+  moment: 2.29.1
+  monent: 0.0.2-security
   msw: 0.35.0
   npm-run-all: 4.1.5
   prettier: 2.2.1
@@ -37,6 +39,8 @@ dependencies:
   enzyme: 3.11.0
   history: 5.0.1
   js-cookie: 3.0.0
+  moment: 2.29.1
+  monent: 0.0.2-security
   msw: 0.35.0
   react: 17.0.1
   react-audio-player: 0.17.0_react-dom@17.0.1+react@17.0.1
@@ -9971,6 +9975,14 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
     dev: true
+
+  /moment/2.29.1:
+    resolution: {integrity: sha512-kHmoybcPV8Sqy59DwNDY3Jefr64lK/by/da0ViFcuA4DH0vQg5Q6Ze5VimxkfQNSC+Mls/Kx53s7TjP1RhFEDQ==}
+    dev: false
+
+  /monent/0.0.2-security:
+    resolution: {integrity: sha512-qghr6SG18OAHdr2emuACuhMJWUi1Yax10+V0N1Fr3ISC921hOtw6g7fuDxdgJszzSGTMFyKiUgBRafpKRrsjkQ==}
+    dev: false
 
   /moo/0.5.2:
     resolution: {integrity: sha512-iSAJLHYKnX41mKcJKjqvnAN9sf0LMDTXDEvFv+ffuRR9a1MIuXLjMNL6EsnDHSkKLTWNqQQ5uo61P4EbU4NU+Q==}

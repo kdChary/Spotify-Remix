@@ -2,12 +2,6 @@ import {Component} from 'react'
 import Cookies from 'js-cookie'
 import {Redirect} from 'react-router-dom'
 
-/* const apiStatusConst = {
-  initial: 'INITIAL',
-  inProgress: 'IN_PROGRESS',
-  success: 'SUCCESS',
-  failure: 'FAILURE',
-} */
 import './index.css'
 
 //  TODO: add Comments.
