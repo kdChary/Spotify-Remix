@@ -6,6 +6,11 @@
   background-size: cover;
   height: 100vh;
 }
+@media (min-width: 768px) {
+  .notfound-bg {
+    display: flex;
+  }
+}
 
 .notfound-container {
   background-color: transparent;
