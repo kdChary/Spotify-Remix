@@ -21,12 +21,13 @@ class Login extends Component {
 
   userAuthenticationSuccessful = jwtToken => {
     Cookies.set('jwt_token', jwtToken, {
-      expires: 30,
+      expires: 1,
       path: '/',
     })
   }
 
-  onSubmitCredentials = async () => {
+  onSubmitCredentials = async event => {
+    event.preventDefault()
     const {username, password} = this.state
 
     const url = 'https://apis.ccbp.in/login'
@@ -56,16 +57,6 @@ class Login extends Component {
     this.setState({password: event.target.value})
   }
 
-  renderErrorMsg = () => {
-    const {errorMsg, showErrMsg} = this.state
-
-    if (showErrMsg) {
-      return <p className="error-msg">*{errorMsg}</p>
-    }
-
-    return null
-  }
-
   render() {
     const {username, password, errorMsg, showErrMsg} = this.state
     const token = Cookies.get('jwt_token')
@@ -73,6 +64,7 @@ class Login extends Component {
     // TODO: add redirection
     if (token !== undefined) {
       console.log(token)
+      return <Redirect to="/" />
     }
 
     return (
