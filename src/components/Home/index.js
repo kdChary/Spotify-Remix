@@ -2,9 +2,9 @@
 import {Component} from 'react'
 import {Redirect} from 'react-router-dom'
 import moment from 'moment'
-
 import Cookies from 'js-cookie'
 
+import LoadingView from '../LoadingView'
 //  TODO: try to make separate file for api Fetching..;)
 
 const apiStatusConst = {
@@ -131,7 +131,7 @@ class Home extends Component {
       return <Redirect to="/login" />
     }
     if (apiFetchStatus === apiStatusConst.inProgress) {
-      return <>{this.renderLoadingView()}</>
+      return <LoadingView />
     }
     return <div>Hello Testing</div>
   }
