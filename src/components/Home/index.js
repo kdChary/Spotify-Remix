@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import {Component} from 'react'
 import {Redirect} from 'react-router-dom'
 import moment from 'moment'
@@ -15,9 +16,9 @@ const apiStatusConst = {
 }
 class Home extends Component {
   state = {
-    editorsPicksList: {},
-    genresAndMoodsList: [],
-    newReleasesList: [],
+    editorsPickList: {},
+    genresAndMoodsList: {},
+    newReleasesList: {},
     apiFetchStatus: apiStatusConst.initial,
   }
 
@@ -49,11 +50,14 @@ class Home extends Component {
     const response = await fetch(url, options)
     const data = await response.json()
     if (response.ok) {
-      this.setState({apiFetchStatus: apiStatusConst.success})
-      const checkData = data.playlists.items.map(eachItem =>
+      const modifyEditorsPick = data.playlists.items.map(eachItem =>
         this.modifyData(eachItem),
       )
-      console.log(checkData)
+
+      this.setState({
+        apiFetchStatus: apiStatusConst.success,
+        editorsPickList: modifyEditorsPick,
+      })
     } else {
       this.setState({apiFetchStatus: apiStatusConst.failure})
       console.log(data.error_msg)
@@ -80,9 +84,10 @@ class Home extends Component {
         name: eachItem.name,
         imageUrl: eachItem.icons[0].url,
       }))
-      this.setState({apiFetchStatus: apiStatusConst.success})
-
-      console.log(modifyCategories)
+      this.setState({
+        apiFetchStatus: apiStatusConst.success,
+        genresAndMoodsList: modifyCategories,
+      })
     } else {
       this.setState({apiFetchStatus: apiStatusConst.failure})
       console.log(data.error_msg)
@@ -109,8 +114,10 @@ class Home extends Component {
         name: eachItem.name,
         imageUrl: eachItem.images[2].url,
       }))
-      this.setState({apiFetchStatus: apiStatusConst.success})
-      console.log(modifyNewReleases)
+      this.setState({
+        apiFetchStatus: apiStatusConst.success,
+        newReleasesList: modifyNewReleases,
+      })
     } else {
       this.setState({apiFetchStatus: apiStatusConst.failure})
       console.log(data.error_msg)
