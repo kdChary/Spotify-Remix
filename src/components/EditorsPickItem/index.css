@@ -1,0 +1,20 @@
+.editors-pick-item {
+  list-style-type: none;
+  border: solid 1px #000000;
+}
+
+.link-item {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.playlist-img {
+  width: 70px;
+}
+
+.playlist-text {
+  font-weight: 600;
+  font-size: 11px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
