@@ -2,10 +2,11 @@
 import {Redirect} from 'react-router-dom'
 import Cookies from 'js-cookie'
 
-// import FailureView from '../FailureView'
+import './index.css'
 import EditorsPickList from '../EditorsPickList'
 import GenresList from '../GenresList'
 import RecentPlayList from '../RecentPlayList'
+import Navbar from '../Navbar'
 //  TODO: try to make separate file for api Fetching..;)
 
 const Home = () => {
@@ -15,11 +16,13 @@ const Home = () => {
     return <Redirect to="/login" />
   }
   return (
-    <div>
-      Hello Testing
-      <EditorsPickList />
-      <GenresList />
-      <RecentPlayList />
+    <div className="home-page">
+      <Navbar />
+      <div className="responsive-home-page">
+        <EditorsPickList />
+        <GenresList />
+        <RecentPlayList />
+      </div>
     </div>
   )
 }
