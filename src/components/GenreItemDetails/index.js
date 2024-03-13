@@ -1,10 +1,12 @@
 import {Component} from 'react'
 import Cookies from 'js-cookie'
 
+import './index.css'
 import LoadingView from '../LoadingView'
 import FailureView from '../FailureView'
 import GenreItem from '../GenreItem'
 import Navbar from '../Navbar'
+import NavigateBack from '../Navbar/NavigateBack'
 
 const apiStatusConst = {
   initial: 'INITIAL',
@@ -37,11 +39,14 @@ class GenreItemDetails extends Component {
     const response = await fetch(url, options)
     const data = await response.json()
     if (response.ok) {
-      const modifyCategories = data.playlists.items.map(eachItem => ({
+      const lists = data.playlists.items.filter(item => item !== null)
+
+      const modifyCategories = lists.map(eachItem => ({
         id: eachItem.id,
         name: eachItem.name,
         imageUrl: eachItem.images[0].url,
       }))
+
       this.setState({
         apiFetchStatus: apiStatusConst.success,
         genreItemDetails: modifyCategories,
@@ -59,7 +64,7 @@ class GenreItemDetails extends Component {
     const {genreItemDetails} = this.state
 
     return (
-      <ul className="genre-details-List">
+      <ul className="genre-details-list">
         {genreItemDetails.map(eachItem => (
           <GenreItem key={eachItem.id} itemDetails={eachItem} />
         ))}
@@ -92,10 +97,15 @@ class GenreItemDetails extends Component {
 
     return (
       <div className="genre-item-details-page">
-        <Navbar />
-        <div className="responsive-genre-details-section">
-          <h3 className="genre-item-details-title">{title}</h3>
-          {this.renderGenreAndMoodsView()}
+        <div className="hide-nav">
+          <Navbar />
+        </div>
+        <div className="genre-details">
+          <NavigateBack />
+          <div className="responsive-genre-details-section">
+            <h3 className="genre-item-details-title">{title}</h3>
+            {this.renderGenreAndMoodsView()}
+          </div>
         </div>
       </div>
     )
