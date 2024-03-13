@@ -66,7 +66,7 @@ class EditorsPickList extends Component {
 
     return (
       <div className="editors-pick-container">
-        <h3 className="editors-pick-title">Editor's picks</h3>
+        <h3 className="editors-pick-title">Editor&#39;s picks</h3>
         <ul className="editors-pick-list">
           {editorsPickList.map(eachItem => (
             <EditorsPickItem key={eachItem.id} itemDetails={eachItem} />
