@@ -23,7 +23,7 @@ const NotFound = () => {
             alt="page not found"
             className="notfound-img"
           />
-          <h1 className="notfound-msg">Page Not Found</h1>
+          <h1 className="notfound-msg">PAGE NOT FOUND</h1>
         </div>
       </div>
     </div>

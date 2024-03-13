@@ -12,8 +12,8 @@ const App = () => (
     <Route exact path="/login" component={Login} />
     <Route exact path="/" component={Home} />
     <Route exact path="/category/:id/:name" component={GenreItemDetails} />
-    <Route path="/not-found" component={NotFound} />
-    <Redirect to="not-found" component={NotFound} />
+    <Route path="/bad-path" component={NotFound} />
+    <Redirect to="/bad-path" component={NotFound} />
   </Switch>
 )
 

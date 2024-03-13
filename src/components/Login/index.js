@@ -77,10 +77,14 @@ class Login extends Component {
             />
             <h2 className="title">Spotify Remix</h2>
           </div>
-          <form onSubmit={this.onSubmitCredentials} className="login-form">
+          <form
+            onSubmit={this.onSubmitCredentials}
+            className="login-form"
+            id="form"
+          >
             <div className="input-label-card">
               <label htmlFor="username" className="label">
-                Username
+                USERNAME
               </label>
               <input
                 type="text"
@@ -94,7 +98,7 @@ class Login extends Component {
 
             <div className="input-label-card">
               <label htmlFor="password" className="label">
-                Password
+                PASSWORD
               </label>
               <input
                 type="password"
