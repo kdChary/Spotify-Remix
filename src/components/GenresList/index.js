@@ -38,6 +38,7 @@ class GenresList extends Component {
     const response = await fetch(url, options)
     const data = await response.json()
     if (response.ok) {
+      console.log(data.categories.items)
       const modifyCategories = data.categories.items.map(eachItem => ({
         id: eachItem.id,
         name: eachItem.name,
@@ -59,8 +60,6 @@ class GenresList extends Component {
 
   renderGenreAndMoodsList = () => {
     const {genreAndMoodsList} = this.state
-    console.log(genreAndMoodsList)
-
     return (
       <div className="categories-container">
         <h3 className="categories-title">Genres & Moods</h3>

@@ -18,14 +18,13 @@ const apiStatusConst = {
 }
 class Home extends Component {
   state = {
-    genresAndMoodsList: {},
     newReleasesList: {},
     apiFetchStatus: apiStatusConst.initial,
   }
 
-  //   componentDidMount() {
-  //     this.getNewReleases()
-  //   }
+  componentDidMount() {
+    this.getNewReleases()
+  }
 
   getNewReleases = async () => {
     this.setState({apiFetchStatus: apiStatusConst.inProgress})
