@@ -10,7 +10,7 @@ import ProtectedRoute from './components/ProtectedRoute'
 //  TODO: add Routing
 const App = () => (
   <Switch>
-    <ProtectedRoute exact path="/login" component={Login} />
+    <Route exact path="/login" component={Login} />
     <ProtectedRoute exact path="/" component={Home} />
     <ProtectedRoute
       exact
