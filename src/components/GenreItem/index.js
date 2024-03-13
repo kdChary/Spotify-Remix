@@ -9,7 +9,7 @@ const GenreItem = props => {
 
   return (
     <li className="genre-item">
-      <Link to={`/category/${id}`} className="link-item">
+      <Link to={`/category/${id}/${name}`} className="link-item">
         <img src={imageUrl} alt="category" className="genre-img" />
         <p className="genre-text">{name}</p>
       </Link>

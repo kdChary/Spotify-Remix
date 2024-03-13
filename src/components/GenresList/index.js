@@ -39,7 +39,6 @@ class GenresList extends Component {
     const data = await response.json()
 
     if (response.ok) {
-      console.log(data)
       const modifyCategories = data.categories.items.map(eachItem => ({
         id: eachItem.id,
         name: eachItem.name,
@@ -84,7 +83,7 @@ class GenresList extends Component {
         return <>{this.renderGenreAndMoodsList()}</>
 
       case apiStatusConst.failure:
-        return <>{this.renderFailureView}</>
+        return <>{this.renderFailureView()}</>
 
       default:
         return null
