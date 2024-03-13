@@ -6,6 +6,7 @@ import Cookies from 'js-cookie'
 import './index.css'
 import LoadingView from '../LoadingView'
 import FailureView from '../FailureView'
+import EditorsPickItem from '../EditorsPickItem'
 
 const apiStatusConst = {
   initial: 'INITIAL',
@@ -63,7 +64,11 @@ class GenresList extends Component {
     return (
       <div className="categories-container">
         <h3 className="categories-title">Genres & Moods</h3>
-        <ul className="categories-list">Hello!!!</ul>
+        <ul className="categories-list">
+          {genreAndMoodsList.map(eachItem => (
+            <EditorsPickItem key={eachItem.id} itemDetails={eachItem} />
+          ))}
+        </ul>
       </div>
     )
   }

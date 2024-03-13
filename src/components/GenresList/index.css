@@ -1,0 +1,25 @@
+.categories-container {
+  /* height: 100vh; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'Roboto';
+  background-color: #181818;
+  box-sizing: border-box;
+  padding: 13px 3px;
+}
+
+.categories-title {
+  font-size: 15px;
+  color: #ffffff;
+  margin: 7px;
+}
+
+.categories-list {
+  padding-left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 5px;
+}
