@@ -7,6 +7,7 @@ import Cookies from 'js-cookie'
 import LoadingView from '../LoadingView'
 // import FailureView from '../FailureView'
 import EditorsPickList from '../EditorsPickList'
+import GenresList from '../GenresList'
 //  TODO: try to make separate file for api Fetching..;)
 
 const apiStatusConst = {
@@ -23,39 +24,8 @@ class Home extends Component {
   }
 
   //   componentDidMount() {
-  //     this.getGenresAndMoods()
   //     this.getNewReleases()
   //   }
-
-  getGenresAndMoods = async () => {
-    this.setState({apiFetchStatus: apiStatusConst.inProgress})
-
-    const url = 'https://apis2.ccbp.in/spotify-clone/categories'
-    const jwtToken = Cookies.get('jwt_token')
-    const options = {
-      method: 'GET',
-      Headers: {
-        Authorization: `Bearer ${jwtToken}`,
-      },
-    }
-
-    const response = await fetch(url, options)
-    const data = await response.json()
-    if (response.ok) {
-      const modifyCategories = data.categories.items.map(eachItem => ({
-        id: eachItem.id,
-        name: eachItem.name,
-        imageUrl: eachItem.icons[0].url,
-      }))
-      this.setState({
-        apiFetchStatus: apiStatusConst.success,
-        genresAndMoodsList: modifyCategories,
-      })
-    } else {
-      this.setState({apiFetchStatus: apiStatusConst.failure})
-      console.log(data.error_msg)
-    }
-  }
 
   getNewReleases = async () => {
     this.setState({apiFetchStatus: apiStatusConst.inProgress})
@@ -101,6 +71,7 @@ class Home extends Component {
       <div>
         Hello Testing
         <EditorsPickList />
+        <GenresList />
       </div>
     )
   }
