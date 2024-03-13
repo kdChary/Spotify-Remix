@@ -9,7 +9,7 @@ const EditorsPickItem = props => {
 
   return (
     <li className="editors-pick-item">
-      <Link to={`/playlist/${id}`} className="link-item">
+      <Link to={`/${name}/${id}`} className="link-item">
         <img src={imageUrl} alt="" className="playlist-img" />
         <p className="playlist-text">{name}</p>
       </Link>
